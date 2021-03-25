@@ -1,0 +1,885 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6CFCAAD5-4363-439D-8B51-26F25F08CA63}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HR.UI</RootNamespace>
+    <AssemblyName>HR.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnaSayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnaSayfa.Designer.cs">
+      <DependentUpon>AnaSayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KullaniciGirisi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KullaniciGirisi.Designer.cs">
+      <DependentUpon>KullaniciGirisi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\HRServiceCompanyInsertApp\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\HRServiceNoticeInsertApp\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Birim\BirimDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Birim\BirimDetay.Designer.cs">
+      <DependentUpon>BirimDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Birim\BirimGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Birim\BirimGuncelle.Designer.cs">
+      <DependentUpon>BirimGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Birim\BirimOlustur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Birim\BirimOlustur.Designer.cs">
+      <DependentUpon>BirimOlustur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Birim\BirimRapor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BirimRapor.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Egitimler\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Egitimler\EgitimDetayListele.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Egitimler\EgitimDetayListele.Designer.cs">
+      <DependentUpon>EgitimDetayListele.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Egitimler\EgitimOlustur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Egitimler\EgitimOlustur.Designer.cs">
+      <DependentUpon>EgitimOlustur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Egitimler\EgitimGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Egitimler\EgitimGuncelle.Designer.cs">
+      <DependentUpon>EgitimGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Hakkinda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Hakkinda.Designer.cs">
+      <DependentUpon>Hakkinda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Istek\IstekOlustur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Istek\IstekOlustur.Designer.cs">
+      <DependentUpon>IstekOlustur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Istek\IstekTipiSil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Istek\IstekTipiSil.Designer.cs">
+      <DependentUpon>IstekTipiSil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Kadro\Kadro Detay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Kadro\Kadro Detay.Designer.cs">
+      <DependentUpon>Kadro Detay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Kadro\Kadro Iptal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Kadro\Kadro Iptal.Designer.cs">
+      <DependentUpon>Kadro Iptal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Kadro\KadroOlustur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Kadro\KadroOlustur.Designer.cs">
+      <DependentUpon>KadroOlustur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Kadro\Kadro Guncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Kadro\Kadro Guncelle.Designer.cs">
+      <DependentUpon>Kadro Guncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Kadro\KadroRapor.cs">
+      <DependentUpon>KadroRapor.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Kadro\KadroRapor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KadroRapor.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\KariyerPlani\Kariyer Olustur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\KariyerPlani\Kariyer Olustur.Designer.cs">
+      <DependentUpon>Kariyer Olustur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\KariyerPlani\Kariyer_Plani_Detay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\KariyerPlani\Kariyer_Plani_Detay.Designer.cs">
+      <DependentUpon>Kariyer_Plani_Detay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\KurumBilgisi\KurumOlustur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\KurumBilgisi\KurumOlustur.Designer.cs">
+      <DependentUpon>KurumOlustur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\KurumBilgisi\KurumGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\KurumBilgisi\KurumGuncelle.Designer.cs">
+      <DependentUpon>KurumGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\MalzemeDetay\MalzemeDetayOlustur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\MalzemeDetay\MalzemeDetayOlustur.Designer.cs">
+      <DependentUpon>MalzemeDetayOlustur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\MalzemeEksikListesi\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\MalzemeEksikListesi\MalzemeDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\MalzemeEksikListesi\MalzemeDetay.Designer.cs">
+      <DependentUpon>MalzemeDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\MalzemeEksikListesi\MalzemeEksikDetayListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\MalzemeEksikListesi\MalzemeEksikDetayListesi.Designer.cs">
+      <DependentUpon>MalzemeEksikDetayListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\MalzemeEksikListesi\MalzemeEksikOlustur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\MalzemeEksikListesi\MalzemeEksikOlustur.Designer.cs">
+      <DependentUpon>MalzemeEksikOlustur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\KariyerPlani\KariyerDetay.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KariyerDetay.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Malzeme\MalzemeDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Malzeme\MalzemeDetay.Designer.cs">
+      <DependentUpon>MalzemeDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Malzeme\MalzemeOlustur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Malzeme\MalzemeOlustur.Designer.cs">
+      <DependentUpon>MalzemeOlustur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Malzeme\MalzemeSil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Malzeme\MalzemeSil.Designer.cs">
+      <DependentUpon>MalzemeSil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Malzeme\SubeBazliMalzeme.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SubeBazliMalzeme.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\Başvurular\Basvuran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\Başvurular\Basvuran.Designer.cs">
+      <DependentUpon>Basvuran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\Başvurular\Basvuranlar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Basvuranlar.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\Başvurular\Basvurular.cs">
+      <DependentUpon>Basvurular.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\Başvurular\Basvurular.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Basvurular.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\Başvurular\IseAlinanlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\Başvurular\IseAlinanlar.Designer.cs">
+      <DependentUpon>IseAlinanlar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\Başvurular\Sehir.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sehir.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\Başvurular\Sehiregore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\Başvurular\Sehiregore.Designer.cs">
+      <DependentUpon>Sehiregore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\Duyurular\Duyurular.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Duyurular.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\Duyurular\DuyuruListele.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\Duyurular\DuyuruListele.Designer.cs">
+      <DependentUpon>DuyuruListele.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\Duyurular\DuyuruOlustur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\Duyurular\DuyuruOlustur.Designer.cs">
+      <DependentUpon>DuyuruOlustur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\KullanıcıBilgileri\Kullanici.cs">
+      <DependentUpon>Kullanici.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\KullanıcıBilgileri\Kullanici.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Kullanici.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\KullanıcıBilgileri\KullaniciOlustur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\KullanıcıBilgileri\KullaniciOlustur.Designer.cs">
+      <DependentUpon>KullaniciOlustur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\KullanıcıBilgileri\KullaniciListele.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\KullanıcıBilgileri\KullaniciListele.Designer.cs">
+      <DependentUpon>KullaniciListele.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\SirketBilgileri\Sirketler.cs">
+      <DependentUpon>Sirketler.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\SirketBilgileri\Sirketler.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sirketler.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\SirketBilgileri\Sirketlerlist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\SirketBilgileri\Sirketlerlist.Designer.cs">
+      <DependentUpon>Sirketlerlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\SirketBilgileri\SirketOluştur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\SirketBilgileri\SirketOluştur.Designer.cs">
+      <DependentUpon>SirketOluştur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\İlanBilgileri\Ilan.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ilan.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\İlanBilgileri\IlanEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\İlanBilgileri\IlanEkle.Designer.cs">
+      <DependentUpon>IlanEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\İlanBilgileri\SubeBazli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\İlanBilgileri\SubeBazli.Designer.cs">
+      <DependentUpon>SubeBazli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\İlanBilgileri\SubelerIcin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\İlanBilgileri\SubelerIcin.Designer.cs">
+      <DependentUpon>SubelerIcin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\İlanBilgileri\SubeSirket.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SubeSirket.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\İlanBilgileri\SubeVeSirket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\İlanBilgileri\SubeVeSirket.Designer.cs">
+      <DependentUpon>SubeVeSirket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Servisler\İlanBilgileri\SubeyeGore.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SubeyeGore.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Subeler\SubeDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Subeler\SubeDetay.Designer.cs">
+      <DependentUpon>SubeDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Subeler\SubeGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Subeler\SubeGuncelle.Designer.cs">
+      <DependentUpon>SubeGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Subeler\SubeOlustur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Subeler\SubeOlustur.Designer.cs">
+      <DependentUpon>SubeOlustur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMKModulu\Subeler\SubeRapor.cs">
+      <DependentUpon>SubeRapor.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TMKModulu\Subeler\SubeRapor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SubeRapor.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AnaSayfa.resx">
+      <DependentUpon>AnaSayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KullaniciGirisi.resx">
+      <DependentUpon>KullaniciGirisi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="TMKModulu\Birim\BirimDetay.resx">
+      <DependentUpon>BirimDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\Birim\BirimGuncelle.resx">
+      <DependentUpon>BirimGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\Birim\BirimOlustur.resx">
+      <DependentUpon>BirimOlustur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\Birim\Report2.rdlc" />
+    <EmbeddedResource Include="TMKModulu\Egitimler\EgitimDetayListele.resx">
+      <DependentUpon>EgitimDetayListele.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\Egitimler\EgitimOlustur.resx">
+      <DependentUpon>EgitimOlustur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\Egitimler\EgitimGuncelle.resx">
+      <DependentUpon>EgitimGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\Egitimler\Report8.rdlc" />
+    <EmbeddedResource Include="TMKModulu\Hakkinda.resx">
+      <DependentUpon>Hakkinda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\Istek\IstekOlustur.resx">
+      <DependentUpon>IstekOlustur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\Istek\IstekTipiSil.resx">
+      <DependentUpon>IstekTipiSil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\Kadro\Kadro Detay.resx">
+      <DependentUpon>Kadro Detay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\Kadro\Kadro Iptal.resx">
+      <DependentUpon>Kadro Iptal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\Kadro\KadroOlustur.resx">
+      <DependentUpon>KadroOlustur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\Kadro\Kadro Guncelle.resx">
+      <DependentUpon>Kadro Guncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\Kadro\Report3.rdlc" />
+    <EmbeddedResource Include="TMKModulu\KariyerPlani\Kariyer Olustur.resx">
+      <DependentUpon>Kariyer Olustur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\KariyerPlani\Kariyer_Plani_Detay.resx">
+      <DependentUpon>Kariyer_Plani_Detay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\KariyerPlani\Report4.rdlc" />
+    <EmbeddedResource Include="TMKModulu\KurumBilgisi\KurumOlustur.resx">
+      <DependentUpon>KurumOlustur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\KurumBilgisi\KurumGuncelle.resx">
+      <DependentUpon>KurumGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\MalzemeDetay\MalzemeDetayOlustur.resx">
+      <DependentUpon>MalzemeDetayOlustur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\MalzemeEksikListesi\MalzemeDetay.resx">
+      <DependentUpon>MalzemeDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\MalzemeEksikListesi\MalzemeEksikDetayListesi.resx">
+      <DependentUpon>MalzemeEksikDetayListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\MalzemeEksikListesi\MalzemeEksikOlustur.resx">
+      <DependentUpon>MalzemeEksikOlustur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\MalzemeEksikListesi\Report6.rdlc" />
+    <EmbeddedResource Include="TMKModulu\MalzemeEksikListesi\Report7.rdlc" />
+    <EmbeddedResource Include="TMKModulu\Malzeme\MalzemeDetay.resx">
+      <DependentUpon>MalzemeDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\Malzeme\MalzemeOlustur.resx">
+      <DependentUpon>MalzemeOlustur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\Malzeme\MalzemeSil.resx">
+      <DependentUpon>MalzemeSil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\Malzeme\Report5.rdlc" />
+    <EmbeddedResource Include="TMKModulu\Servisler\Başvurular\Basvuran.resx">
+      <DependentUpon>Basvuran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\Servisler\Başvurular\IseAlinanlar.resx">
+      <DependentUpon>IseAlinanlar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\Servisler\Başvurular\Report15.rdlc" />
+    <EmbeddedResource Include="TMKModulu\Servisler\Başvurular\Report16.rdlc" />
+    <EmbeddedResource Include="TMKModulu\Servisler\Başvurular\Report17.rdlc" />
+    <EmbeddedResource Include="TMKModulu\Servisler\Başvurular\Sehiregore.resx">
+      <DependentUpon>Sehiregore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\Servisler\Duyurular\DuyuruListele.resx">
+      <DependentUpon>DuyuruListele.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\Servisler\Duyurular\DuyuruOlustur.resx">
+      <DependentUpon>DuyuruOlustur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\Servisler\Duyurular\Report9.rdlc" />
+    <EmbeddedResource Include="TMKModulu\Servisler\KullanıcıBilgileri\KullaniciOlustur.resx">
+      <DependentUpon>KullaniciOlustur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\Servisler\KullanıcıBilgileri\KullaniciListele.resx">
+      <DependentUpon>KullaniciListele.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\Servisler\KullanıcıBilgileri\Report11.rdlc" />
+    <EmbeddedResource Include="TMKModulu\Servisler\SirketBilgileri\Report10.rdlc" />
+    <EmbeddedResource Include="TMKModulu\Servisler\SirketBilgileri\Sirketlerlist.resx">
+      <DependentUpon>Sirketlerlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\Servisler\SirketBilgileri\SirketOluştur.resx">
+      <DependentUpon>SirketOluştur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\Servisler\İlanBilgileri\IlanEkle.resx">
+      <DependentUpon>IlanEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\Servisler\İlanBilgileri\Report12.rdlc" />
+    <EmbeddedResource Include="TMKModulu\Servisler\İlanBilgileri\Report13.rdlc" />
+    <EmbeddedResource Include="TMKModulu\Servisler\İlanBilgileri\Report14.rdlc" />
+    <EmbeddedResource Include="TMKModulu\Servisler\İlanBilgileri\SubeBazli.resx">
+      <DependentUpon>SubeBazli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\Servisler\İlanBilgileri\SubelerIcin.resx">
+      <DependentUpon>SubelerIcin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\Servisler\İlanBilgileri\SubeVeSirket.resx">
+      <DependentUpon>SubeVeSirket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\Subeler\Report1.rdlc" />
+    <EmbeddedResource Include="TMKModulu\Subeler\SubeDetay.resx">
+      <DependentUpon>SubeDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\Subeler\SubeGuncelle.resx">
+      <DependentUpon>SubeGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMKModulu\Subeler\SubeOlustur.resx">
+      <DependentUpon>SubeOlustur.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\HRServiceCompanyInsertApp\CompanyServices.wsdl" />
+    <None Include="Service References\HRServiceCompanyInsertApp\HR.UI.HRServiceCompanyInsertApp.DeleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HRServiceCompanyInsertApp\HR.UI.HRServiceCompanyInsertApp.GetAllCompanyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HRServiceCompanyInsertApp\HR.UI.HRServiceCompanyInsertApp.InsertResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HRServiceCompanyInsertApp\HR.UI.HRServiceCompanyInsertApp.Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HRServiceCompanyInsertApp\HR.UI.HRServiceCompanyInsertApp.ResultOfListOfCompany.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HRServiceCompanyInsertApp\HR.UI.HRServiceCompanyInsertApp.UpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HRServiceNoticeInsertApp\HR.UI.HRServiceNoticeInsertApp.DeleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HRServiceNoticeInsertApp\HR.UI.HRServiceNoticeInsertApp.GetAllNoticeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HRServiceNoticeInsertApp\HR.UI.HRServiceNoticeInsertApp.InsertResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HRServiceNoticeInsertApp\HR.UI.HRServiceNoticeInsertApp.Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HRServiceNoticeInsertApp\HR.UI.HRServiceNoticeInsertApp.ResultOfListOfNotice.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HRServiceNoticeInsertApp\HR.UI.HRServiceNoticeInsertApp.UpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HRServiceNoticeInsertApp\NoticeServices.wsdl" />
+    <None Include="TMKModulu\Birim\BirimRapor.xsc">
+      <DependentUpon>BirimRapor.xsd</DependentUpon>
+    </None>
+    <None Include="TMKModulu\Birim\BirimRapor.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BirimRapor.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TMKModulu\Birim\BirimRapor.xss">
+      <DependentUpon>BirimRapor.xsd</DependentUpon>
+    </None>
+    <None Include="TMKModulu\Egitimler\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TMKModulu\Egitimler\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TMKModulu\Egitimler\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TMKModulu\Kadro\KadroRapor.xsc">
+      <DependentUpon>KadroRapor.xsd</DependentUpon>
+    </None>
+    <None Include="TMKModulu\Kadro\KadroRapor.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>KadroRapor.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TMKModulu\Kadro\KadroRapor.xss">
+      <DependentUpon>KadroRapor.xsd</DependentUpon>
+    </None>
+    <None Include="TMKModulu\KariyerPlani\KariyerDetay.xsc">
+      <DependentUpon>KariyerDetay.xsd</DependentUpon>
+    </None>
+    <None Include="TMKModulu\KariyerPlani\KariyerDetay.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>KariyerDetay.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TMKModulu\KariyerPlani\KariyerDetay.xss">
+      <DependentUpon>KariyerDetay.xsd</DependentUpon>
+    </None>
+    <None Include="TMKModulu\MalzemeEksikListesi\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TMKModulu\MalzemeEksikListesi\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TMKModulu\MalzemeEksikListesi\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TMKModulu\Malzeme\SubeBazliMalzeme.xsc">
+      <DependentUpon>SubeBazliMalzeme.xsd</DependentUpon>
+    </None>
+    <None Include="TMKModulu\Malzeme\SubeBazliMalzeme.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SubeBazliMalzeme.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TMKModulu\Malzeme\SubeBazliMalzeme.xss">
+      <DependentUpon>SubeBazliMalzeme.xsd</DependentUpon>
+    </None>
+    <None Include="TMKModulu\Servisler\Başvurular\Basvuranlar.xsc">
+      <DependentUpon>Basvuranlar.xsd</DependentUpon>
+    </None>
+    <None Include="TMKModulu\Servisler\Başvurular\Basvuranlar.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Basvuranlar.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TMKModulu\Servisler\Başvurular\Basvuranlar.xss">
+      <DependentUpon>Basvuranlar.xsd</DependentUpon>
+    </None>
+    <None Include="TMKModulu\Servisler\Başvurular\Basvurular.xsc">
+      <DependentUpon>Basvurular.xsd</DependentUpon>
+    </None>
+    <None Include="TMKModulu\Servisler\Başvurular\Basvurular.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Basvurular.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TMKModulu\Servisler\Başvurular\Basvurular.xss">
+      <DependentUpon>Basvurular.xsd</DependentUpon>
+    </None>
+    <None Include="TMKModulu\Servisler\Başvurular\Sehir.xsc">
+      <DependentUpon>Sehir.xsd</DependentUpon>
+    </None>
+    <None Include="TMKModulu\Servisler\Başvurular\Sehir.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Sehir.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TMKModulu\Servisler\Başvurular\Sehir.xss">
+      <DependentUpon>Sehir.xsd</DependentUpon>
+    </None>
+    <None Include="TMKModulu\Servisler\Duyurular\Duyurular.xsc">
+      <DependentUpon>Duyurular.xsd</DependentUpon>
+    </None>
+    <None Include="TMKModulu\Servisler\Duyurular\Duyurular.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Duyurular.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TMKModulu\Servisler\Duyurular\Duyurular.xss">
+      <DependentUpon>Duyurular.xsd</DependentUpon>
+    </None>
+    <None Include="TMKModulu\Servisler\KullanıcıBilgileri\Kullanici.xsc">
+      <DependentUpon>Kullanici.xsd</DependentUpon>
+    </None>
+    <None Include="TMKModulu\Servisler\KullanıcıBilgileri\Kullanici.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Kullanici.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TMKModulu\Servisler\KullanıcıBilgileri\Kullanici.xss">
+      <DependentUpon>Kullanici.xsd</DependentUpon>
+    </None>
+    <None Include="TMKModulu\Servisler\SirketBilgileri\Sirketler.xsc">
+      <DependentUpon>Sirketler.xsd</DependentUpon>
+    </None>
+    <None Include="TMKModulu\Servisler\SirketBilgileri\Sirketler.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Sirketler.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TMKModulu\Servisler\SirketBilgileri\Sirketler.xss">
+      <DependentUpon>Sirketler.xsd</DependentUpon>
+    </None>
+    <None Include="TMKModulu\Servisler\İlanBilgileri\Ilan.xsc">
+      <DependentUpon>Ilan.xsd</DependentUpon>
+    </None>
+    <None Include="TMKModulu\Servisler\İlanBilgileri\Ilan.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Ilan.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TMKModulu\Servisler\İlanBilgileri\Ilan.xss">
+      <DependentUpon>Ilan.xsd</DependentUpon>
+    </None>
+    <None Include="TMKModulu\Servisler\İlanBilgileri\SubeSirket.xsc">
+      <DependentUpon>SubeSirket.xsd</DependentUpon>
+    </None>
+    <None Include="TMKModulu\Servisler\İlanBilgileri\SubeSirket.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SubeSirket.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TMKModulu\Servisler\İlanBilgileri\SubeSirket.xss">
+      <DependentUpon>SubeSirket.xsd</DependentUpon>
+    </None>
+    <None Include="TMKModulu\Servisler\İlanBilgileri\SubeyeGore.xsc">
+      <DependentUpon>SubeyeGore.xsd</DependentUpon>
+    </None>
+    <None Include="TMKModulu\Servisler\İlanBilgileri\SubeyeGore.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SubeyeGore.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TMKModulu\Servisler\İlanBilgileri\SubeyeGore.xss">
+      <DependentUpon>SubeyeGore.xsd</DependentUpon>
+    </None>
+    <None Include="TMKModulu\Subeler\SubeRapor.xsc">
+      <DependentUpon>SubeRapor.xsd</DependentUpon>
+    </None>
+    <None Include="TMKModulu\Subeler\SubeRapor.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SubeRapor.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TMKModulu\Subeler\SubeRapor.xss">
+      <DependentUpon>SubeRapor.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HR.BLL\HR.BLL.csproj">
+      <Project>{5afbf3cc-68b0-43f3-b554-160c110cc006}</Project>
+      <Name>HR.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HR.DAL\HR.DAL.csproj">
+      <Project>{c58f7473-1359-4de2-954c-76836da7985b}</Project>
+      <Name>HR.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HR.DTO\HR.DTO.csproj">
+      <Project>{0c4cbde3-0256-42ee-a167-8cc62970b2db}</Project>
+      <Name>HR.DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\HRServiceCompanyInsertApp\" />
+    <WCFMetadataStorage Include="Service References\HRServiceNoticeInsertApp\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HRServiceNoticeInsertApp\NoticeServices.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HRServiceNoticeInsertApp\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HRServiceNoticeInsertApp\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HRServiceNoticeInsertApp\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HRServiceCompanyInsertApp\CompanyServices.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HRServiceCompanyInsertApp\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HRServiceCompanyInsertApp\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HRServiceCompanyInsertApp\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

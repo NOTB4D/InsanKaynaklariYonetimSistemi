@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="InsanKaynaklariConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="InsanKaynaklariConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.HR.UI.Properties.Settings.GlobalReference.Default.InsanKaynaklariConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="InsanKaynaklariConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>Select
+     s.SubeAdi,
+	 b.BirimAdi,
+	 evk.KurumAdi,
+	 e.EgitimAdi,
+	 e.EgitimSeviyesi,
+	 k.EgitimBaslamaTarihi,
+	 k.EgitimBitisTarihi
+		 from tb_Egitimler as e		
+join tb_KariyerPlani as k
+on e.ID=k.EgitimAdi
+join tb_EgitimiVerenKurum as evk
+on k.EgitimiVerenKurum=evk.ID
+join tb_Subeler as s
+on k.SubeID=s.ID
+join tb_Birim as b
+on b.ID=s.ID
+Order By b.BirimAdi
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SubeAdi" DataSetColumn="SubeAdi" />
+              <Mapping SourceColumn="BirimAdi" DataSetColumn="BirimAdi" />
+              <Mapping SourceColumn="KurumAdi" DataSetColumn="KurumAdi" />
+              <Mapping SourceColumn="EgitimAdi" DataSetColumn="EgitimAdi" />
+              <Mapping SourceColumn="EgitimSeviyesi" DataSetColumn="EgitimSeviyesi" />
+              <Mapping SourceColumn="EgitimBaslamaTarihi" DataSetColumn="EgitimBaslamaTarihi" />
+              <Mapping SourceColumn="EgitimBitisTarihi" DataSetColumn="EgitimBitisTarihi" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SubeAdi" msprop:Generator_ColumnVarNameInTable="columnSubeAdi" msprop:Generator_ColumnPropNameInRow="SubeAdi" msprop:Generator_ColumnPropNameInTable="SubeAdiColumn" msprop:Generator_UserColumnName="SubeAdi">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BirimAdi" msprop:Generator_ColumnVarNameInTable="columnBirimAdi" msprop:Generator_ColumnPropNameInRow="BirimAdi" msprop:Generator_ColumnPropNameInTable="BirimAdiColumn" msprop:Generator_UserColumnName="BirimAdi">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KurumAdi" msprop:Generator_ColumnVarNameInTable="columnKurumAdi" msprop:Generator_ColumnPropNameInRow="KurumAdi" msprop:Generator_ColumnPropNameInTable="KurumAdiColumn" msprop:Generator_UserColumnName="KurumAdi">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EgitimAdi" msprop:Generator_ColumnVarNameInTable="columnEgitimAdi" msprop:Generator_ColumnPropNameInRow="EgitimAdi" msprop:Generator_ColumnPropNameInTable="EgitimAdiColumn" msprop:Generator_UserColumnName="EgitimAdi">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EgitimSeviyesi" msprop:Generator_ColumnVarNameInTable="columnEgitimSeviyesi" msprop:Generator_ColumnPropNameInRow="EgitimSeviyesi" msprop:Generator_ColumnPropNameInTable="EgitimSeviyesiColumn" msprop:Generator_UserColumnName="EgitimSeviyesi">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EgitimBaslamaTarihi" msprop:Generator_ColumnVarNameInTable="columnEgitimBaslamaTarihi" msprop:Generator_ColumnPropNameInRow="EgitimBaslamaTarihi" msprop:Generator_ColumnPropNameInTable="EgitimBaslamaTarihiColumn" msprop:Generator_UserColumnName="EgitimBaslamaTarihi" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EgitimBitisTarihi" msprop:Generator_ColumnVarNameInTable="columnEgitimBitisTarihi" msprop:Generator_ColumnPropNameInRow="EgitimBitisTarihi" msprop:Generator_ColumnPropNameInTable="EgitimBitisTarihiColumn" msprop:Generator_UserColumnName="EgitimBitisTarihi" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

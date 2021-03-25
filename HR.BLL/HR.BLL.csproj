@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5AFBF3CC-68B0-43F3-B554-160C110CC006}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HR.BLL</RootNamespace>
+    <AssemblyName>HR.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AllRepository\AdvertisementRepository.cs" />
+    <Compile Include="AllRepository\CareerPlanRepository.cs" />
+    <Compile Include="AllRepository\CompanyListRepository.cs" />
+    <Compile Include="AllRepository\DepartmentRepository.cs" />
+    <Compile Include="AllRepository\EducationCompanyRepository.cs" />
+    <Compile Include="AllRepository\EducationRepository.cs" />
+    <Compile Include="AllRepository\JustSectionRepository.cs" />
+    <Compile Include="AllRepository\LoginRepository.cs" />
+    <Compile Include="AllRepository\RequestRepository.cs" />
+    <Compile Include="AllRepository\SectionRepository.cs" />
+    <Compile Include="AllRepository\StaffRepository.cs" />
+    <Compile Include="AllRepository\SupplyDetailsListRepository.cs" />
+    <Compile Include="AllRepository\SupplyDetailsRepository.cs" />
+    <Compile Include="AllRepository\SupplyRepository.cs" />
+    <Compile Include="HR.Interface\UsersRepository.cs" />
+    <Compile Include="HR.Interface\IAdvertisement.cs" />
+    <Compile Include="HR.Interface\ICareerPlan.cs" />
+    <Compile Include="HR.Interface\ICompany.cs" />
+    <Compile Include="HR.Interface\IDepartment.cs" />
+    <Compile Include="HR.Interface\IDetails.cs" />
+    <Compile Include="HR.Interface\IEducation.cs" />
+    <Compile Include="HR.Interface\IEducationCompany.cs" />
+    <Compile Include="HR.Interface\IJustSection.cs" />
+    <Compile Include="HR.Interface\IRequest.cs" />
+    <Compile Include="HR.Interface\ISection.cs" />
+    <Compile Include="HR.Interface\IStaff.cs" />
+    <Compile Include="HR.Interface\ISupply.cs" />
+    <Compile Include="HR.Interface\ISupplyDetails.cs" />
+    <Compile Include="HR.Interface\ISupplyDetailsList.cs" />
+    <Compile Include="HR.Interface\IUsers.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HR.DAL\HR.DAL.csproj">
+      <Project>{c58f7473-1359-4de2-954c-76836da7985b}</Project>
+      <Name>HR.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HR.DTO\HR.DTO.csproj">
+      <Project>{0c4cbde3-0256-42ee-a167-8cc62970b2db}</Project>
+      <Name>HR.DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
